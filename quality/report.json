@@ -1,0 +1,102 @@
+{
+  "generated_at": "2026-02-18T18:50:49.432109",
+  "total_records": 965793,
+  "summary": {
+    "total_checks": 7,
+    "passed": 5,
+    "failed": 2
+  },
+  "checks": [
+    {
+      "check": "nulls_in_critical_fields",
+      "passed": false,
+      "detail": {
+        "trip_id": {
+          "null_count": 0,
+          "passed": "True"
+        },
+        "trip_start_timestamp": {
+          "null_count": 0,
+          "passed": "True"
+        },
+        "fare": {
+          "null_count": 1113,
+          "passed": "False"
+        }
+      }
+    },
+    {
+      "check": "non_negative_values",
+      "passed": true,
+      "detail": {
+        "fare": {
+          "negative_count": 0,
+          "passed": true
+        },
+        "tips": {
+          "negative_count": 0,
+          "passed": true
+        },
+        "tolls": {
+          "negative_count": 0,
+          "passed": true
+        },
+        "extras": {
+          "negative_count": 0,
+          "passed": true
+        },
+        "trip_total": {
+          "negative_count": 0,
+          "passed": true
+        },
+        "trip_miles": {
+          "negative_count": 0,
+          "passed": true
+        },
+        "trip_seconds": {
+          "negative_count": 0,
+          "passed": true
+        }
+      }
+    },
+    {
+      "check": "trip_id_uniqueness",
+      "passed": true,
+      "total": 965793,
+      "unique": 965793,
+      "duplicates": 0
+    },
+    {
+      "check": "temporal_coherence",
+      "passed": false,
+      "incoherent_count": 1
+    },
+    {
+      "check": "outlier_flags",
+      "passed": true,
+      "outlier_count": 975,
+      "outlier_rate_pct": 0.101,
+      "breakdown": {
+        "trip_seconds_gt_3h": 914,
+        "trip_miles_gt_100": 77,
+        "negative_fare": 0,
+        "end_before_start": 1
+      }
+    },
+    {
+      "check": "total_consistency",
+      "passed": true,
+      "inconsistent_count": 563137,
+      "tolerance": 0.1,
+      "note": "trip_total incluye componentes no desglosados en el dataset p\u00fablico (surcharges municipales variables)"
+    },
+    {
+      "check": "date_range",
+      "passed": true,
+      "expected_start": "2025-12-03",
+      "expected_end": "2026-01-31",
+      "actual_start": "2025-12-03",
+      "actual_end": "2026-01-31"
+    }
+  ]
+}

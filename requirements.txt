@@ -1,0 +1,12 @@
+﻿# API & HTTP
+requests
+
+# Data processing
+pandas
+pyarrow==13.0.0
+
+# Database
+mysql-connector-python==9.6.0
+
+# Environment
+python-dotenv==1.2.1

@@ -1,0 +1,6 @@
+﻿.env
+data/raw/
+data/staging/
+__pycache__/
+*.pyc
+.claude/
